@@ -1,4 +1,4 @@
-package com.management.service;
+package com.management.service.interfaces;
 
 import java.util.List;
 
@@ -7,7 +7,7 @@ import org.springframework.stereotype.Service;
 import com.management.entity.Student;
 
 @Service
-public interface StudentService {
+public interface StudentServiceInterface {
 	List<Student> getAllStudents();
 	
 	Student saveStudent(Student student);

@@ -1,4 +1,4 @@
-package com.management.impl;
+package com.management.service.impl;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.springframework.stereotype.Service;
 
 import com.management.entity.Student;
 import com.management.repository.StudentRepository;
-import com.management.service.StudentService;
+import com.management.service.interfaces.StudentServiceInterface;
 
 @Service
-public class StudentServiceImpl implements StudentService {
+public class StudentServiceImpl implements StudentServiceInterface {
 
 	private StudentRepository studentRepository;
 

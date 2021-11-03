@@ -8,14 +8,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 
 import com.management.entity.Student;
-import com.management.service.StudentService;
+import com.management.service.interfaces.StudentServiceInterface;
 
 @Controller
 public class StudentController {
 
-	private StudentService studentService;
+	private StudentServiceInterface studentService;
 
-	public StudentController(StudentService studentService) {
+	public StudentController(StudentServiceInterface studentService) {
 		super();
 		this.studentService = studentService;
 	}
@@ -48,7 +48,6 @@ public class StudentController {
 
 	@PostMapping("/students/{id}")
 	public String updateStudent(@PathVariable Long id, @ModelAttribute("student") Student student, Model model) {
-
 		Student existingStudent = studentService.getStudentById(id);
 		existingStudent.setId(id);
 		existingStudent.setFirstName(student.getFirstName());
